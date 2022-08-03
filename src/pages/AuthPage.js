@@ -1,7 +1,8 @@
 import React from "react";
+import MainAuthentication from "../components/Authentication/MainAuthentication";
 
 function AuthPage() {
-  return <div>AuthPage</div>;
+  return <MainAuthentication />;
 }
 
 export default AuthPage;

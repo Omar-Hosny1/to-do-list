@@ -26,6 +26,13 @@ a {
   padding: 0;
 }
 
-.a {
-  background-color: black;
+.main-authentication {
+  background-color: #ececec;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.main-authentication .auth-img img {
+  max-width: 727px;
 }/*# sourceMappingURL=index.css.map */

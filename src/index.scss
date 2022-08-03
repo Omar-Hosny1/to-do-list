@@ -1,6 +1,9 @@
 // Global Styling File Added
 @use "./SCSS/global-styling";
 
+// all Mixins Added
+@use "./SCSS/mixins" as *;
+
 // App File Added
 @use "./App.scss";
 

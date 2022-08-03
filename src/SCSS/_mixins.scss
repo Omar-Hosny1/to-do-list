@@ -1,0 +1,16 @@
+@mixin flex($layout, $flex-dir) {
+  display: flex;
+  align-items: center;
+  @if ($layout == "s-b") {
+    justify-content: space-between;
+  } @else if($layout == "s-a") {
+    justify-content: space-around;
+  } @else {
+    justify-content: center;
+  }
+  @if ($flex-dir == "col") {
+    flex-direction: column;
+  } @else {
+    flex-direction: row;
+  }
+}
