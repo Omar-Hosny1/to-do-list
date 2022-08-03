@@ -2,4 +2,7 @@
 @use "./SCSS/global-styling";
 
 // App File Added
-@use "./app";
+@use "./App.scss";
+
+// Auth Page Styling Added
+@use "./pages/AuthPage.scss";
