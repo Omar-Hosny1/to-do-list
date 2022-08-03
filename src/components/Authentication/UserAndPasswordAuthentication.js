@@ -1,11 +1,13 @@
 import React, { useRef, useState } from "react";
-import { app } from "../../firebase-connfig";
+import { app } from "../../Firebase/firebase-connfig";
 import { useNavigate } from "react-router-dom";
+import GoogleAuth from "./GoogleAuth";
 import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
+
 function UserAndPasswordAuthentication() {
   const navigate = useNavigate();
   const [isSignUp, setIsSignUp] = useState(true);
@@ -26,6 +28,7 @@ function UserAndPasswordAuthentication() {
       .then((res) => {
         alert("Successful Operation");
         navigate("/main-page");
+        localStorage.setItem("loggedIn", true);
       })
       .catch((err) => {
         alert(err.message);
@@ -41,6 +44,7 @@ function UserAndPasswordAuthentication() {
     signInWithEmailAndPassword(auth, enteredEmail, enteredPassword)
       .then((res) => {
         navigate("/main-page");
+        localStorage.setItem("loggedIn", true);
       })
       .catch((err) => {
         alert(err.message);
@@ -78,7 +82,7 @@ function UserAndPasswordAuthentication() {
           <button type="submit">Sign In</button>
         </form>
       )}
-
+      <GoogleAuth />
       {isSignUp ? (
         <span onClick={() => setIsSignUp(false)}>Already Has An Account!</span>
       ) : (
